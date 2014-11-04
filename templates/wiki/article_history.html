@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}History of {{ article.title }} - My Wiki{% endblock %}
+
+{% block header %}
+    <div class="page-actions pull-right">
+        <a href="/{{ article.slug }}/" class="btn btn-default">Back to article</a>
+    </div>
+    <h1>History of {{ article.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% if revision_list %}
+    <table class="table">
+        <tr>
+            <th scope="col">Timestamp</th>
+            <th scope="col">User</th>
+            <th scope="col">Comment</th>
+        </tr>
+        {% for revision in revision_list %}
+        <tr>
+            <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
+            <td>{{ revision.user }}</td>
+            <td>{{ revision.comment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No changes to display</p>
+    {% endif %}
+{% endblock %}

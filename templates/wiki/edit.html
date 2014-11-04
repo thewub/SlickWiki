@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Editing {{ article.title}} - My Wiki{% endblock %}
+
+{% block header %}
+    <h1>Editing {{ article.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" class="edit-form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save changes" title="Save changes" class="btn btn-primary">
+        <a href="{{ article.get_absolute_url }}" class="btn btn-default">Cancel</a>
+    </form>
+{% endblock %}

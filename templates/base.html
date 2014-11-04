@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}My Wiki{% endblock %}</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,800">
+        <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "styles.css" %}">
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">My Wiki</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="/">Index</a></li>
+                        <li><a href="/special/recentchanges/">Recent changes</a></li>
+                        <li><a href="/special/userlist/">User list</a></li>
+                    </ul>
+
+                    <form action="/special/search/" method="GET" class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        {% if messages %}
+        <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="page-header">
+            <div class="container">
+                {% block header %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="center-block account-tools">
+                    {% if user.is_authenticated %}
+                    Logged in as {{ user.username }}. <a href="/special/logout/">Log out</a>
+                    {% else %}
+                    <ul class="list-inline">
+                        <li><a href="/special/login/">Log in</a></li>
+                        <li><a href="/special/createaccount/">Create account</a></li>
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </footer>
+            
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    </body>
+</html>

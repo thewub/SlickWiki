@@ -1,0 +1,52 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 80px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+}
+/* End sticky footer styles */
+
+
+
+body {
+    overflow-y: scroll; /* always show scroll bar */
+    padding-top: 50px;
+    font-family: 'Lato', sans-serif;
+    background: #fcfff5;
+}
+
+.content {
+    padding-top: 20px;
+}
+
+.messages {
+    margin-top: 10px;
+}
+
+.edit-form #id_text {
+    display: block;
+    width: 100%;
+    font-family: monospace;
+}
+.edit-form #id_comment {
+    width: 100%;
+}
+
+.page-header {
+    margin: 0;
+    padding: 30px 0 20px;
+    border: none;
+    background: #d4edfa;
+    min-height: 149px;
+}

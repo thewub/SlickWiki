@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Recent changes - My Wiki{% endblock %}
+
+{% block header %}
+    <h1>Recent changes</h1>
+{% endblock %}
+
+{% block content %}
+    {% if revision_list %}
+    <table class="table">
+        <tr>
+            <th scope="col">Timestamp</th>
+            <th scope="col">Article</th>
+            <th scope="col">User</th>
+            <th scope="col">Comment</th>
+        </tr>
+        {% for revision in revision_list %}
+        <tr>
+            <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
+            <td><a href="{{ revision.article.get_absolute_url }}">{{ revision.article.title }}</a></td>
+            <td>{{ revision.user }}</td>
+            <td>{{ revision.comment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No changes to display</p>
+    {% endif %}
+{% endblock %}

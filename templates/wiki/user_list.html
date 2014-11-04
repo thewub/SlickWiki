@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}User list - My Wiki{% endblock %}
+
+{% block header %}
+    <h1>User list</h1>
+{% endblock %}
+
+{% block content %}
+    {% if user_list %}
+    <ul>
+        {% for user in user_list %}
+        <li>{{ user.username }}</a></li>
+        {% endfor %}
+    <ul>
+    {% else %}
+    <p>There are no users.</p>
+    {% endif %}
+{% endblock %}

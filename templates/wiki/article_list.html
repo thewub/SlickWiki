@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}My Wiki{% endblock %}
+
+{% block header %}
+    <h1>List of articles</h1>
+{% endblock %}
+
+{% block content %}
+    {% if article_list %}
+    <ul>
+        {% for article in article_list %}
+        <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+        {% endfor %}
+    <ul>
+    {% else %}
+    <p>There are no articles</p>
+    {% endif %}
+{% endblock %}

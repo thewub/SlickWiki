@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load custom_markdown %}
+
+{% block title %}{{ article.title}} - My Wiki{% endblock %}
+
+{% block header %}
+    <div class="page-actions pull-right">
+        <a href="/{{ article.slug }}/edit/" class="btn btn-default">Edit</a>
+        <a href="/{{ article.slug }}/history/" class="btn btn-default">History</a>
+    </div>
+    <h1>{{ article.title }}</h1>
+    <p>edited by {{ article.current_revision.user.username }} at {{ article.current_revision.timestamp }}</p>
+{% endblock %}
+
+{% block content %}
+    <p>{{ article.current_revision.text|custom_markdown }}</p>
+{% endblock %}
