@@ -12,19 +12,23 @@
 
 {% block content %}
     {% if revision_list %}
-    <table class="table">
-        <tr>
-            <th scope="col">Timestamp</th>
-            <th scope="col">User</th>
-            <th scope="col">Comment</th>
-        </tr>
-        {% for revision in revision_list %}
-        <tr>
-            <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
-            <td>{{ revision.user }}</td>
-            <td>{{ revision.comment }}</td>
-        </tr>
-        {% endfor %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Timestamp</th>
+                <th scope="col">User</th>
+                <th scope="col">Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revision in revision_list %}
+            <tr>
+                <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
+                <td>{{ revision.user }}</td>
+                <td>{{ revision.comment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
     {% else %}
     <p>No changes to display</p>
