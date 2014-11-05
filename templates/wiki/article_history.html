@@ -21,7 +21,7 @@
             {% for revision in revision_list %}
             <tr>
                 <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
-                <td>{{ revision.user }}</td>
+                <td><a href="/user/{{ revision.user.username }}">{{ revision.user }}</a></td>
                 <td>{{ revision.comment }}</td>
             </tr>
             {% endfor %}

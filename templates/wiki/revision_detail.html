@@ -10,7 +10,7 @@
         <a href="/{{ revision.article.slug }}/history/" class="btn btn-default">History</a>
     </div>
     <h1>Revision of "{{ revision.article.title }}"</h1>
-    <p>edited by {{ revision.user.username }} at {{ revision.timestamp }}</p>
+    <p class="subhead">edited by <a href="/user/{{ revision.user.username }}">{{ revision.user.username }}</a> at {{ revision.timestamp }}</p>
 {% endblock %}
 
 {% block content %}
