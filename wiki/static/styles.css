@@ -54,3 +54,8 @@ body {
 .page-header .subhead a {
     color: white;
 }
+
+.table thead i {
+    color: #a6c8ea;
+    padding-right: 4px;
+}
