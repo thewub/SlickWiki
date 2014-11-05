@@ -5,8 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from wiki.models import Article, Revision
 from wiki.forms import EditForm
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
 def view_article(request, slug):
@@ -59,6 +60,16 @@ def article_history(request, slug):
     revision_list = Revision.objects.filter(article=article)
     return render_to_response('wiki/article_history.html', {
                                     'article': article,
+                                    'revision_list': revision_list
+                                },
+                                context_instance=RequestContext(request))
+
+
+def user_info(request, username):
+    user = get_object_or_404(User, username=username)
+    revision_list = Revision.objects.filter(user=user)
+    return render_to_response('wiki/user_info.html', {
+                                    'user': user,
                                     'revision_list': revision_list
                                 },
                                 context_instance=RequestContext(request))

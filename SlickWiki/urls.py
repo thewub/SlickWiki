@@ -31,6 +31,9 @@ urlpatterns = patterns('',
 
     # Individual revision
     url(r'revision/(?P<pk>\d+)/?$', DetailView.as_view(model=Revision)),
+
+    # User
+    url(r'user/(?P<username>[-a-zA-Z0-9]+)/?$', 'wiki.views.user_info'),
     
     # Article list
     url(r'^/?$', ListView.as_view(model=Article) ),

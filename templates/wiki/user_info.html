@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user }} - My Wiki{% endblock %}
+
+{% block header %}
+    <h1>{{ user }}</h1>
+    <p class="subhead">joined {{ user.date_joined }}</p>
+{% endblock %}
+
+{% block content %}
+    {% if revision_list %}
+    <h2>Contributions</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"><i class="fa fa-clock-o"></i> Timestamp</th>
+                <th scope="col"><i class="fa fa-file-text"></i> Article</th>
+                <th scope="col"><i class="fa fa-comment"></i> Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for revision in revision_list %}
+            <tr>
+                <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
+                <td><a href="{{ revision.article.get_absolute_url }}">{{ revision.article.title }}</a></td>
+                <td>{{ revision.comment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No changes to display</p>
+    {% endif %}
+{% endblock %}
