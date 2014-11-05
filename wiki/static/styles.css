@@ -26,6 +26,13 @@ body {
     background: #fcfff5;
 }
 
+.search-icon {
+    padding-right: 8px;
+}
+.search-field {
+    border-radius: 16px;
+}
+
 .content {
     padding-top: 20px;
 }
