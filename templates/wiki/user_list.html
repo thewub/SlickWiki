@@ -10,7 +10,7 @@
     {% if user_list %}
     <ul>
         {% for user in user_list %}
-        <li>{{ user.username }}</a></li>
+        <li><a href="/user/{{ user.username }}">{{ user.username }}</a></li>
         {% endfor %}
     <ul>
     {% else %}
