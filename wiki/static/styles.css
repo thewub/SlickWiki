@@ -38,7 +38,11 @@ body {
 }
 
 .messages {
-    margin-top: 10px;
+    margin: 0;
+    padding: 0;
+}
+.alert {
+    margin: 0;
 }
 
 .edit-form #id_text {
