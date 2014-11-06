@@ -8,7 +8,7 @@
 
 {% block content %}
     {% if article_list %}
-    <ul>
+    <ul class="simple-list">
         {% for article in article_list %}
         <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
         {% endfor %}

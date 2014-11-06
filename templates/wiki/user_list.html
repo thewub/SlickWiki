@@ -8,7 +8,7 @@
 
 {% block content %}
     {% if user_list %}
-    <ul>
+    <ul class="simple-list">
         {% for user in user_list %}
         <li><a href="/user/{{ user.username }}">{{ user.username }}</a></li>
         {% endfor %}
