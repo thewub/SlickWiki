@@ -10,7 +10,7 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def custom_markdown(value):
-    extensions = ['nl2br', 'wikilinks', 'headerid(level=2)']
+    extensions = ['wikilinks', 'headerid(level=2)']
     return mark_safe(markdown.markdown(force_unicode(value),
                                         extensions,
                                         safe_mode=True,
