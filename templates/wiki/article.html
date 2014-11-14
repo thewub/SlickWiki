@@ -14,5 +14,5 @@
 {% endblock %}
 
 {% block content %}
-    <p>{{ article.current_revision.text|custom_markdown }}</p>
+    <div class="article-content">{{ article.current_revision.text|custom_markdown }}</div>
 {% endblock %}

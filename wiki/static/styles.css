@@ -45,6 +45,10 @@ body {
     margin: 0;
 }
 
+.article-content {
+    max-width: 60em;
+}
+
 .edit-form #id_text {
     display: block;
     width: 100%;
