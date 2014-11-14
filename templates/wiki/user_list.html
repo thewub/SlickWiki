@@ -8,11 +8,22 @@
 
 {% block content %}
     {% if user_list %}
-    <ul class="simple-list">
-        {% for user in user_list %}
-        <li><a href="/user/{{ user.username }}">{{ user.username }}</a></li>
-        {% endfor %}
-    <ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"><i class="fa fa-user"></i> User</th>
+                <th scope="col"><i class="fa fa-clock-o"></i> Joined</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user_list %}
+            <tr>
+                <td><a href="/user/{{ user.username }}">{{ user.username }}</a></td>
+                <td>{{ user.date_joined }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% else %}
     <p>There are no users.</p>
     {% endif %}
