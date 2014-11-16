@@ -23,7 +23,25 @@ body {
     overflow-y: scroll; /* always show scroll bar */
     padding-top: 50px;
     font-family: 'Lato', sans-serif;
-    background: #fcfff5;
+    background: #ecf0f1;
+    font-size: 16px;
+}
+a {
+    color: #2980b9;
+}
+
+.navbar-default {
+    background: #bdc3c7;
+    color: #333;
+    border-color: #95a5a6;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: #333;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a:hover {
+    color: #2980b9;
 }
 
 .search-icon {
@@ -62,7 +80,7 @@ body {
     margin: 0;
     padding: 30px 0 20px;
     border: none;
-    background: #4397e9;
+    background: #34495e;
     color: white;
     min-height: 149px;
 }
@@ -71,7 +89,7 @@ body {
 }
 
 .table thead i {
-    color: #a6c8ea;
+    color: #95a5a6;
     padding-right: 4px;
 }
 
