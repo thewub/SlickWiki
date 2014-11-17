@@ -68,8 +68,10 @@ a {
     transition: all 0.2s ease;
 }
 
-.navbar-form .search-field:focus {
-    width: 16em;
+@media (min-width: 992px) {
+    .navbar-form .search-field:focus {
+        width: 16em;
+    }    
 }
 
 .content {
