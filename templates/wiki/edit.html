@@ -4,7 +4,7 @@
 
 {% block header %}
     <h1><i class="fa fa-pencil"></i> {{ article.title }}</h1>
-    <p class="subhead">editing</p>
+    <p class="subhead"><a href="/{{ article.slug }}/">« back to article</a></p>
 {% endblock %}
 
 {% block content %}

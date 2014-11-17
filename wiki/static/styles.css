@@ -113,6 +113,9 @@ a {
 .page-header .subhead a {
     color: white;
 }
+.page-header .subhead {
+    opacity: 0.4;
+}
 
 .table thead i {
     opacity: 0.4;
