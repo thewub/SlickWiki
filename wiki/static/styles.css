@@ -94,9 +94,11 @@ a {
     display: block;
     width: 100%;
     font-family: monospace;
+    padding: 0.5em;
 }
 .edit-form #id_comment {
     width: 100%;
+    padding: 0.5em;
 }
 
 .page-header {
