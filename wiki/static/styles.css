@@ -107,12 +107,15 @@ a {
     color: white;
     min-height: 149px;
 }
+.page-header h1 i {
+    opacity: 0.4;
+}
 .page-header .subhead a {
     color: white;
 }
 
 .table thead i {
-    color: #95a5a6;
+    opacity: 0.4;
     padding-right: 4px;
 }
 
