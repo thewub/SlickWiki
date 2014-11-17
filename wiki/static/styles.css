@@ -35,6 +35,16 @@ a {
     color: #333;
     border-color: #95a5a6;
 }
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #95a5a6;
+}
+.navbar-brand {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
     color: #333;
@@ -44,11 +54,22 @@ a {
     color: #2980b9;
 }
 
+.navbar-brand,
+.navbar-default .navbar-nav>li {
+    border-right: 1px solid #95a5a6;
+}
+
 .search-icon {
     padding-right: 8px;
 }
-.search-field {
+.navbar-form .search-field {
     border-radius: 16px;
+    width: 12em;
+    transition: all 0.2s ease;
+}
+
+.navbar-form .search-field:focus {
+    width: 16em;
 }
 
 .content {
