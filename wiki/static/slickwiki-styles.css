@@ -126,19 +126,10 @@ a {
 
 /* Sortable tables */
 .table-sortable thead th {
-    background-image: url(jquery-tablesorter/bg.gif);
-    background-repeat: no-repeat;
-    background-position: center right;
     cursor: pointer;
 }
 .table-sortable thead th:hover {
     color: #2980b9;
-}
-.table-sortable thead th.headerSortUp {
-    background-image: url(jquery-tablesorter/asc.gif);
-}
-.table-sortable thead th.headerSortDown {
-    background-image: url(jquery-tablesorter/desc.gif);
 }
 
 .simple-list {
