@@ -99,3 +99,5 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 db.sqlite3
+
+db.sqlite3
