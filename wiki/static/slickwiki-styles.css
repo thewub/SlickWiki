@@ -24,7 +24,7 @@ footer {
 body {
     overflow-y: scroll; /* always show scroll bar */
     padding-top: 50px;
-    font-family: "Lato", Calibri, "Segoe UI", Optima, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #ecf0f1;
     font-size: 16px;
 }
@@ -33,32 +33,34 @@ a {
 }
 
 .navbar-default {
-    background: #bdc3c7;
-    color: #333;
-    border-color: #95a5a6;
+    background: #00305A;
+    color: #ddd;
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #95a5a6;
-}
-.navbar-brand {
-    font-size: 1.4em;
-    font-weight: bold;
-    padding-right: 20px;
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
-.navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
-    color: #333;
+    color: #ddd;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-nav>li>a:hover {
-    color: #2980b9;
+    color: #eeeeff;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-right: 20px;
+    color: white;
 }
 
 .navbar-brand,
 .navbar-default .navbar-nav>li {
-    border-right: 1px solid #95a5a6;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .search-icon {
@@ -107,7 +109,7 @@ a {
     margin: 0;
     padding: 30px 0 20px;
     border: none;
-    background: #34495e;
+    background: #00305A;
     color: white;
     min-height: 149px;
 }
