@@ -107,11 +107,10 @@ a {
 
 .page-header {
     margin: 0;
-    padding: 30px 0 20px;
+    padding: 20px 0;
     border: none;
     background: #00305A;
     color: white;
-    min-height: 149px;
 }
 .page-header h1 i {
     opacity: 0.4;
