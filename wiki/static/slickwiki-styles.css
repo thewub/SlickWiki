@@ -67,7 +67,6 @@ a {
     padding-right: 8px;
 }
 .navbar-form .search-field {
-    border-radius: 16px;
     width: 12em;
     transition: all 0.2s ease;
 }
