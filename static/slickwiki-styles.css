@@ -24,12 +24,7 @@ footer {
 body {
     overflow-y: scroll; /* always show scroll bar */
     padding-top: 50px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: #ecf0f1;
     font-size: 16px;
-}
-a {
-    color: #2980b9;
 }
 
 .navbar-default {
@@ -108,16 +103,8 @@ a {
     margin: 0;
     padding: 20px 0;
     border: none;
-    background: #00305A;
-    color: white;
 }
 .page-header h1 i {
-    opacity: 0.4;
-}
-.page-header .subhead a {
-    color: white;
-}
-.page-header .subhead {
     opacity: 0.4;
 }
 
