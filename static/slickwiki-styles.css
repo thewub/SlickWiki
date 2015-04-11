@@ -87,9 +87,6 @@ body {
 .table-sortable thead th {
     cursor: pointer;
 }
-.table-sortable thead th:hover {
-    color: #2980b9;
-}
 .arrow {
     padding-left: 4px;
 }
