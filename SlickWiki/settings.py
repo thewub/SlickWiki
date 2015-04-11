@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates') ,)
+STATICFILES_DIRS = (os.path.join( BASE_DIR, 'static') ,)
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.6/howto/static-files/
+STATIC_URL = '/static/'
 
 SITE_ID = 1
 
@@ -80,9 +85,7 @@ USE_TZ = True
 
 DATETIME_FORMAT = 'j F Y, H:i'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-STATIC_URL = '/static/'
+
 
 LOGIN_URL = '/special/login/'
 LOGIN_REDIRECT_URL = '/'
