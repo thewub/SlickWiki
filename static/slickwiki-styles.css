@@ -27,39 +27,9 @@ body {
     font-size: 16px;
 }
 
-.navbar-default {
-    background: #00305A;
-    color: #ddd;
-    border-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-    border-color: rgba(0, 0, 0, 0.2);
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: #ddd;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-nav>li>a:hover {
-    color: #eeeeff;
-}
-
-.navbar-default .navbar-brand {
-    font-size: 1.2em;
-    font-weight: bold;
-    padding-right: 20px;
-    color: white;
-}
-
-.navbar-brand,
-.navbar-default .navbar-nav>li {
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .search-icon {
     padding-right: 8px;
+    color: white;
 }
 .navbar-form .search-field {
     width: 12em;
