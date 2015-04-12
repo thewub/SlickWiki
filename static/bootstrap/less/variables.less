@@ -21,6 +21,11 @@
 @brand-danger:          #dc322f;
 
 
+// Solarized
+@sol-base3:             #ffffd7; // Background
+@sol-base2:             #e4e4e4; // Background highlights (e.g. forms, table stripes)
+
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -129,7 +134,7 @@
 //** Default background color used for all tables.
 @table-bg:                      transparent;
 //** Background color used for `.table-striped`.
-@table-bg-accent:               #EEE8D5;
+@table-bg-accent:               @sol-base2;
 //** Background color used for `.table-hover`.
 @table-bg-hover:                #f5f5f5;
 @table-bg-active:               @table-bg-hover;
@@ -176,7 +181,7 @@
 //##
 
 //** `<input>` background color
-@input-bg:                       #fff;
+@input-bg:                       @sol-base2;
 //** `<input disabled>` background color
 @input-bg-disabled:              @gray-lighter;
 
