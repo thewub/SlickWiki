@@ -4,11 +4,12 @@
 
 {% block title %}Revision of "{{ revision.article.title}}" - My Wiki{% endblock %}
 
+{% block navbar_tools %}
+    <li><a href="/{{ revision.article.slug }}/"><i class="fa fa-arrow-up"></i> Current version</a></li>
+    <li><a href="/{{ revision.article.slug }}/history/"><i class="fa fa-clock-o"></i> History</a></li>
+{% endblock %}
+
 {% block header %}
-    <div class="page-actions pull-right">
-        <a href="/{{ revision.article.slug }}/" class="btn btn-default">Current version</a>
-        <a href="/{{ revision.article.slug }}/history/" class="btn btn-default">History</a>
-    </div>
     <h1>Revision of "{{ revision.article.title }}"</h1>
     <p class="subhead">edited by <a href="/user/{{ revision.user.username }}">{{ revision.user.username }}</a> at {{ revision.timestamp }}</p>
 {% endblock %}
