@@ -12,9 +12,9 @@
     {% for article in article_list %}
         {% if forloop.first %}<div class="row">{% endif %}
         <div class="col-md-4">
-            <h2 style="text-align: center;"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
-            <p style="text-align: center;">{{ article.current_revision.text | custom_markdown | striptags | truncatewords:20 }}</p>
-            <p class="text-muted" style="text-align: center;">Last edited by <a href="/user/{{ article.current_revision.user.username }}">{{ article.current_revision.user.username }}</a> at {{ article.current_revision.timestamp }}</p>
+            <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+            <p>{{ article.current_revision.text | custom_markdown | striptags | truncatewords:20 }}</p>
+            <p class="text-muted small">Last edited by <a href="/user/{{ article.current_revision.user.username }}">{{ article.current_revision.user.username }}</a> at {{ article.current_revision.timestamp }}</p>
         </div>
         {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
         {% if forloop.last %}</div>{% endif %}
