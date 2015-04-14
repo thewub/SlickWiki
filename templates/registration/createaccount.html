@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block title %}Create account - My Wiki{% endblock %}
 
@@ -7,11 +8,13 @@
 {% endblock %}
 
 {% block content %}
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
+<div class="middle-content">
+    <form method="post">
+        {% csrf_token %}
+        {{ form | bootstrap }}
 
-<input type="submit" value="Create account" class="btn btn-primary">
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
+        <input type="submit" value="Create account" class="btn btn-primary btn-lg btn-block">
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
 {% endblock %}
