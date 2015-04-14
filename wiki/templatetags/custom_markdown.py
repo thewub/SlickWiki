@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import markdown
 from markdown.extensions.toc import TocExtension
 
@@ -11,7 +14,7 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def custom_markdown(value):
-    extensions = ['wikilinks', TocExtension(baselevel=2, title='Contents')]
+    extensions = ['wikilinks', TocExtension(baselevel=2, title='Contents', permalink=u'#')]
     return mark_safe(markdown.markdown(force_unicode(value),
                                         extensions,
                                         safe_mode=True,

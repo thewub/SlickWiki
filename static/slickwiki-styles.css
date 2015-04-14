@@ -97,6 +97,16 @@ body {
 
 
 
+/* Headers and anchor links */
+
+h2, h3, h4, h5, h6 {
+    position: relative; /* Allow absolute positioning of .headerlink within these */
+}
+.headerlink {
+    position: absolute;
+    left: -2.5rem;
+    opacity: 0.2;
+}
 
 /* Fix so anchor links don't get covered by navbar */
 *[id]:before { 
