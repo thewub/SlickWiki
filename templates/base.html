@@ -43,6 +43,22 @@
                         </div>
                     </form>
 
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <i class="fa fa-user"></i> {{ user.username }} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/special/logout/">Log out</a></li>
+                            </ul>
+                        </li>                        
+                        {% else %}
+                        <li><a href="/special/login/">Log in</a></li>
+                        <li><a href="/special/createaccount/">Create account</a></li>
+                        {% endif %}
+                    </ul>
+
                 </div>
 
             </div>
@@ -73,16 +89,6 @@
 
         <footer>
             <div class="container">
-                <div class="center-block account-tools">
-                    {% if user.is_authenticated %}
-                    Logged in as {{ user.username }}. <a href="/special/logout/">Log out</a>
-                    {% else %}
-                    <ul class="list-inline">
-                        <li><a href="/special/login/">Log in</a></li>
-                        <li><a href="/special/createaccount/">Create account</a></li>
-                    </ul>
-                    {% endif %}
-                </div>
             </div>
         </footer>
             
