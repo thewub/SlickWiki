@@ -11,7 +11,7 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def custom_markdown(value):
-    extensions = ['wikilinks', TocExtension(baselevel=2)]
+    extensions = ['wikilinks', TocExtension(baselevel=2, title='Contents')]
     return mark_safe(markdown.markdown(force_unicode(value),
                                         extensions,
                                         safe_mode=True,
