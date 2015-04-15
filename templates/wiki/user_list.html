@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col" data-sort="string"><i class="fa fa-user"></i> User</i></th>
                 <th scope="col" data-sort="string"><i class="fa fa-clock-o"></i> Joined</i></th>
+                <th scope="col" data-sort="string">Groups</i></th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,10 @@
             <tr>
                 <td><a href="/user/{{ user.username }}">{{ user.username }}</a></td>
                 <td data-sort-value="{{ user.date_joined|date:"c" }}">{{ user.date_joined }}</td>
+                <td>
+                    {% if user.is_staff %}<span class="label label-default">staff</span>{% endif %}
+                    {% if user.is_superuser %}<span class="label label-default">superuser</span>{% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>
