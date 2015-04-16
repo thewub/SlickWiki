@@ -1,0 +1,9 @@
+{% for group in user.groups.all %}
+    <span class="label label-default" title="This user is in the {{ group.name }} group.">{{ group.name }}</span>
+{% endfor %}
+{% if user.is_staff %}
+    <span class="label label-primary" title="This user can access the Django admin area.">staff</span>
+{% endif %}
+{% if user.is_superuser %}
+    <span class="label label-primary" title="This user has all the permissions.">superuser</span>
+{% endif %}

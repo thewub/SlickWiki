@@ -5,6 +5,9 @@
 {% block header %}
     <h1><i class="fa fa-user"></i> {{ user }}</h1>
     <p class="subhead">joined {{ user.date_joined }}</p>
+    <div class="user-groups">
+        {% include 'wiki/snippets/user_groups.html' %}
+    </div>
 {% endblock %}
 
 {% block content %}
