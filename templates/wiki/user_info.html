@@ -6,8 +6,7 @@
     <h1><i class="fa fa-user"></i> {{ user }}</h1>
     <p class="subhead">joined {{ user.date_joined }}</p>
     <div class="user-groups">
-        {% if user.is_staff %}<span class="label label-default">staff</span>{% endif %}
-        {% if user.is_superuser %}<span class="label label-default">superuser</span>{% endif %}
+        {% include 'wiki/snippets/user_groups.html' %}
     </div>
 {% endblock %}
 
