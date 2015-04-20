@@ -32,6 +32,9 @@ urlpatterns = patterns('',
     # Individual revision
     url(r'revision/(?P<pk>\d+)/?$', DetailView.as_view(model=Revision)),
 
+    # Diff
+    url(r'special/diff/(?P<rev1id>\d+)/(?P<rev2id>\d+)/?$', 'wiki.views.diff'),
+
     # User
     url(r'user/(?P<username>[-a-zA-Z0-9]+)/?$', 'wiki.views.user_info'),
     

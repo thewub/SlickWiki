@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load custom_markdown %}
+
+{% block title %}diff - My Wiki{% endblock %}
+
+{% block header %}
+    <h1>Diff</h1>
+{% endblock %}
+
+{% block content %}
+    <pre>{{ diffText | safe }}</pre>
+{% endblock %}

@@ -10,6 +10,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
+import difflib
+
 def view_article(request, slug):
     try:
         article = Article.objects.get(slug=slug)
@@ -61,6 +63,28 @@ def article_history(request, slug):
     return render_to_response('wiki/article_history.html', {
                                     'article': article,
                                     'revision_list': revision_list
+                                },
+                                context_instance=RequestContext(request))
+
+
+def diff(request, rev1id, rev2id):
+    rev1 = Revision.objects.get(id=rev1id)
+    rev2 = Revision.objects.get(id=rev2id)
+    diff = difflib.unified_diff(
+                a = rev1.text.split('\n'),
+                b = rev2.text.split('\n'),
+                fromfile = rev1.article.title,
+                tofile = rev2.article.title,
+                fromfiledate = rev1.timestamp,
+                tofiledate = rev2.timestamp
+            )
+    diffText = ''.join(diff)
+
+    # .make_table(rev1.text.split('\n'), rev2.text.split('\n'))
+    return render_to_response('wiki/diff.html', {
+                                    'rev1': rev1,
+                                    'rev2': rev2,
+                                    'diffText': diffText
                                 },
                                 context_instance=RequestContext(request))
 
