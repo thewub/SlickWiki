@@ -12,6 +12,10 @@ from django.contrib import messages
 
 import difflib
 
+from pygments import highlight
+from pygments.lexers import DiffLexer
+from pygments.formatters import HtmlFormatter
+
 def view_article(request, slug):
     try:
         article = Article.objects.get(slug=slug)
@@ -79,12 +83,13 @@ def diff(request, rev1id, rev2id):
                 tofiledate = rev2.timestamp
             )
     diffText = ''.join(diff)
+    diffHtml = highlight( diffText, DiffLexer(), HtmlFormatter(cssclass='codehilite') )
 
     # .make_table(rev1.text.split('\n'), rev2.text.split('\n'))
     return render_to_response('wiki/diff.html', {
                                     'rev1': rev1,
                                     'rev2': rev2,
-                                    'diffText': diffText
+                                    'diffHtml': diffHtml
                                 },
                                 context_instance=RequestContext(request))
 
