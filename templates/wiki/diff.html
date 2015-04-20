@@ -2,10 +2,11 @@
 
 {% load custom_markdown %}
 
-{% block title %}diff - My Wiki{% endblock %}
+{% block title %}Diff - My Wiki{% endblock %}
 
 {% block header %}
     <h1>Diff</h1>
+    <p>between <a href="{{ rev1.get_absolute_url }}">{{ rev1.article.title }} @ {{ rev1.timestamp }}</a> and <a href="{{ rev2.get_absolute_url }}">{{ rev2.article.title }} @ {{ rev2.timestamp }}</a></p>
 {% endblock %}
 
 {% block content %}
