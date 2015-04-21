@@ -82,10 +82,9 @@ def diff(request, rev1id, rev2id):
                 fromfiledate = rev1.timestamp,
                 tofiledate = rev2.timestamp
             )
-    diffText = ''.join(diff)
+    diffText = '\n'.join(diff)
     diffHtml = highlight( diffText, DiffLexer(), HtmlFormatter(cssclass='codehilite') )
 
-    # .make_table(rev1.text.split('\n'), rev2.text.split('\n'))
     return render_to_response('wiki/diff.html', {
                                     'rev1': rev1,
                                     'rev2': rev2,
