@@ -17,14 +17,24 @@ urlpatterns = patterns('',
 
     # Recent changes
     url(r'special/recentchanges/?', 
-        ListView.as_view(model=Revision, template_name='wiki/recent_changes.html') ),
+        ListView.as_view(
+            model=Revision,
+            paginate_by=20,
+            template_name='wiki/recent_changes.html') ),
 
     # User stuff
     url(r'special/login/?', 'django.contrib.auth.views.login'),
     url(r'special/logout/?', 'django.contrib.auth.views.logout', {'next_page': '/'}),
     url(r'special/createaccount/?', 'wiki.views.create_account'),
 
-    url(r'special/userlist/?', ListView.as_view(model=User, template_name='wiki/user_list.html') ),
+    url(r'special/userlist/?', 
+        ListView.as_view(
+            model=User,
+            paginate_by=20,
+            template_name='wiki/user_list.html') ),
+
+    # User
+    url(r'user/(?P<username>[-a-zA-Z0-9]+)/?$', 'wiki.views.user_info'),
 
     # Search articles
     url(r'special/search/?', 'wiki.views.get_search_results'),
@@ -34,9 +44,6 @@ urlpatterns = patterns('',
 
     # Diff
     url(r'special/diff/(?P<rev1id>\d+)/(?P<rev2id>\d+)/?$', 'wiki.views.diff'),
-
-    # User
-    url(r'user/(?P<username>[-a-zA-Z0-9]+)/?$', 'wiki.views.user_info'),
     
     # Article list
     url(r'^/?$', ListView.as_view(model=Article) ),

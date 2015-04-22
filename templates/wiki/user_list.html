@@ -28,6 +28,7 @@
             {% endfor %}
         </tbody>
     </table>
+    {% include 'wiki/snippets/pagination.html' %}
     {% else %}
     <p>There are no users.</p>
     {% endif %}
