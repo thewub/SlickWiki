@@ -55,6 +55,9 @@ function scroll_if_anchor(href) {
         $('html, body').animate({ scrollTop: $target.offset().top - fromTop }, 200);
         if(history && "pushState" in history) {
             history.pushState({}, document.title, window.location.pathname + href);
+            // Hack because the :target pseudoselector doesn't work with this code
+            $('.target').removeClass('target');
+            $target.addClass('target');
             return false;
         }
     }
