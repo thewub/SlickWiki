@@ -7,7 +7,7 @@ class EditForm(forms.ModelForm):
         model = Revision
         fields = ['text', 'comment']
         widgets = {
-            'text' : forms.Textarea(attrs={'cols': 40, 'rows': 15})
+            'text' : forms.Textarea(attrs={'cols': 40, 'rows': 15, 'autofocus': 'true'})
         }
         labels = {
             'text' : ''
