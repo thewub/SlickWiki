@@ -56,15 +56,24 @@ body {
     margin: 0;
 }
 
-.middle-content {
+.center-form {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+.article-content {
     max-width: 42em;
     margin: 0 auto;
+    font-family: @font-family-serif;
+}
+.article-snippet {
+    font-family: @font-family-serif;
 }
 
 .edit-form #id_text {
     display: block;
     width: 100%;
-    font-family: monospace;
+    font-family: @font-family-monospace;
     padding: 0.5em;
 }
 .edit-form #id_comment {
@@ -77,6 +86,9 @@ body {
     padding-top: 1em;
     border: none;
     text-align: center;
+}
+.page-header h1 {
+    font-weight: 700;
 }
 .page-header h1 i {
     opacity: 0.4;
@@ -104,6 +116,7 @@ body {
     .well;
 }
 .toctitle {
+    font-family: @font-family-sans-serif;
     font-weight: bold;
 }
 
@@ -116,6 +129,11 @@ h2, h3, h4, h5, h6 {
     position: absolute;
     left: -2.5rem;
     opacity: 0.2;
+}
+.headerlink:hover,
+.headerlink:active,
+.headerlink:focus {
+    text-decoration: none;
 }
 
 .target .headerlink {
