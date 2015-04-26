@@ -30,10 +30,12 @@ def edit_article(request, slug):
         article = Article.objects.get(slug=slug)
         initial_text = article.current_revision.text
         initial_comment = ''
+        new_article = False
     except Article.DoesNotExist:
         article = Article(slug=slug, title=slug)
         initial_text = ''
         initial_comment = 'Creating new article'
+        new_article = True
 
     form = EditForm(request.POST or None, initial={'text': initial_text, 'comment': initial_comment})
     if form.is_valid():
@@ -56,7 +58,8 @@ def edit_article(request, slug):
     return render_to_response('wiki/edit.html', 
                                 { 
                                     'form': form, 
-                                    'article': article
+                                    'article': article,
+                                    'new_article': new_article
                                 },
                                 context_instance=RequestContext(request))
 
