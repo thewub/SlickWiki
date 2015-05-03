@@ -15,6 +15,7 @@
                 <th scope="col"><i class="fa fa-clock-o"></i> Timestamp</th>
                 <th scope="col"><i class="fa fa-user"></i> User</th>
                 <th scope="col"><i class="fa fa-comment"></i> Comment</th>
+                <th scope="col">Diff</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                 <td><a href="{{ revision.get_absolute_url }}">{{ revision.timestamp }}</a></td>
                 <td><a href="/user/{{ revision.user.username }}">{{ revision.user }}</a></td>
                 <td>{{ revision.comment }}</td>
+                <td>{% if revision.parent %}<a href="/special/diff/{{ revision.parent.id }}/{{ revision.id }}/">diff</a></td>{% endif %}
             </tr>
             {% endfor %}
         </tbody>
