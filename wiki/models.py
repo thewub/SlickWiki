@@ -13,12 +13,14 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
+
 class Revision(models.Model):
     text = models.TextField()
     comment = models.CharField(max_length=200, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User)
     article = models.ForeignKey(Article)
+    parent = models.ForeignKey('self', null=True)
 
     class Meta:
         ordering = ["-timestamp"]

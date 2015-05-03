@@ -38,6 +38,7 @@ def edit_article(request, slug):
         new_article = True
 
     form = EditForm(request.POST or None, initial={'text': initial_text, 'comment': initial_comment})
+
     if form.is_valid():
         # Need to save this first, so the revision can have a valid article field
         article.save()
@@ -47,6 +48,10 @@ def edit_article(request, slug):
         # Auto generate the rest
         revision.article = article
         revision.user = request.user
+
+        if not new_article:
+            revision.parent = article.current_revision
+
         # And save
         revision.save()
 
@@ -55,6 +60,7 @@ def edit_article(request, slug):
         article.save()
 
         return redirect(article)
+
     return render_to_response('wiki/edit.html', 
                                 { 
                                     'form': form, 
