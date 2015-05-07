@@ -20,12 +20,16 @@ $(document).ready(function() {
     });
     /* End of sortable tables */
 
+    // Highlight search icon when search field is focused
     $('#search-field').focusin(function() {
         $('.search-icon').addClass('active');
     });
     $('#search-field').focusout(function() {
         $('.search-icon').removeClass('active');
     });
+
+    // Hacky autofocus for login/create account forms
+    $('#id_username').focus();
 
     // When our page loads, check to see if it contains an anchor
     scroll_if_anchor(window.location.hash);
