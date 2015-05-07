@@ -20,6 +20,13 @@ $(document).ready(function() {
     });
     /* End of sortable tables */
 
+    $('#search-field').focusin(function() {
+        $('.search-icon').addClass('active');
+    });
+    $('#search-field').focusout(function() {
+        $('.search-icon').removeClass('active');
+    });
+
     // When our page loads, check to see if it contains an anchor
     scroll_if_anchor(window.location.hash);
 
