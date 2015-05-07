@@ -6,8 +6,11 @@
 
 {% block header %}
     <h1>Diff</h1>
-    <p class="subhead">between <a href="{{ rev1.get_absolute_url }}">{{ rev1.article.title }} @ {{ rev1.timestamp }}</a> 
-    <br>and <a href="{{ rev2.get_absolute_url }}">{{ rev2.article.title }} @ {{ rev2.timestamp }}</a></p>
+    <p class="subhead">
+        between <a href="{{ rev1.get_absolute_url }}">{{ rev1.article.title }} @ {{ rev1.timestamp }}</a> 
+        <br>and <a href="{{ rev2.get_absolute_url }}">{{ rev2.article.title }} @ {{ rev2.timestamp }}</a>
+        {% if rev2.comment %}<br>"{{ rev2.comment }}"{% endif %}
+    </p>
 {% endblock %}
 
 {% block content %}
