@@ -84,7 +84,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-DATETIME_FORMAT = 'j F Y, H:i'
+DATETIME_FORMAT = 'j F Y, H:i:s'
 
 
 
