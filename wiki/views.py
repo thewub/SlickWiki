@@ -32,7 +32,7 @@ def edit_article(request, slug):
         initial_comment = ''
         new_article = False
     except Article.DoesNotExist:
-        article = Article(slug=slug, title=slug)
+        article = Article(slug=slug, title=slug.replace('-', ' '))
         initial_text = ''
         initial_comment = 'Creating new article'
         new_article = True
