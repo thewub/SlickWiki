@@ -17,6 +17,7 @@ from pygments.lexers import DiffLexer
 from pygments.formatters import HtmlFormatter
 
 def view_article(request, slug):
+    slug = slug.replace(' ', '-')
     try:
         article = Article.objects.get(slug=slug)
     except Article.DoesNotExist:
@@ -26,6 +27,7 @@ def view_article(request, slug):
 
 @login_required
 def edit_article(request, slug):
+    slug = slug.replace(' ', '-')
     try:
         article = Article.objects.get(slug=slug)
         initial_text = article.current_revision.text
@@ -71,6 +73,7 @@ def edit_article(request, slug):
 
 
 def article_history(request, slug):
+    slug = slug.replace(' ', '-')
     article = get_object_or_404(Article, slug=slug)
     revision_list = Revision.objects.filter(article=article)
     return render_to_response('wiki/article_history.html', {

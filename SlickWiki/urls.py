@@ -52,11 +52,11 @@ urlpatterns = patterns('',
             template_name='wiki/index.html') ),
 
     # Edit article
-    url(r'(?P<slug>[-a-zA-Z0-9\-]+)/edit/?$', 'wiki.views.edit_article'),
+    url(r'(?P<slug>[-a-zA-Z0-9\- ]+)/edit/?$', 'wiki.views.edit_article'),
 
     # History of article
-    url(r'(?P<slug>[-a-zA-Z0-9\-]+)/history/?$', 'wiki.views.article_history'),
+    url(r'(?P<slug>[-a-zA-Z0-9\- ]+)/history/?$', 'wiki.views.article_history'),
 
     # View article
-    url(r'^(?P<slug>[-a-zA-Z0-9\-]+)/?$', 'wiki.views.view_article'),
+    url(r'^(?P<slug>[-a-zA-Z0-9\- ]+)/?$', 'wiki.views.view_article'),
 )
