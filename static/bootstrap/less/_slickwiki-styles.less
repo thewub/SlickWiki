@@ -139,6 +139,13 @@ body {
     margin: 0 auto;
     font-family: @font-family-serif;
 
+    /* Label external links */
+    a[href^="http"]:after {
+        font-family: 'FontAwesome';
+        content: ' \f08e';
+        font-size: small;
+    }
+
     /* Hanging bullets TODO: fix on mobile */
     > ul,
     > ol {
