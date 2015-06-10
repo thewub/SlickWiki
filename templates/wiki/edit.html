@@ -19,8 +19,9 @@
         {% csrf_token %}
         {{ form | bootstrap}}
         <div class="form-group">
-            <input type="submit" value="Save changes" title="Save changes" class="btn btn-primary">
-            <a href="{{ article.get_absolute_url }}" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <a target="_blank" href="https://daringfireball.net/projects/markdown/basics" class="btn btn-link">Markdown help <i class="fa fa-external-link"></i></a>
+            <a href="{{ article.get_absolute_url }}" class="btn btn-link">Cancel editing</a>
         </div>
     </form>
 {% endblock %}
