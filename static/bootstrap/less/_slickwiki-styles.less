@@ -17,6 +17,18 @@ footer {
 }
 /* End sticky footer styles */
 
+#skip-to-content {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    background: @sol-base3;
+    z-index: @zindex-popover;
+    padding: .2em .8em;
+}
+#skip-to-content:focus {
+    left: 0;
+}
+
 footer {
     padding-top: 10px;
 }
