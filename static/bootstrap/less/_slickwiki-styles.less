@@ -19,14 +19,15 @@ footer {
 
 #skip-to-content {
     position: absolute;
-    left: -10000px;
-    top: 0;
+    left: 0;
+    top: -3em;
     background: @sol-base3;
     z-index: @zindex-popover;
     padding: .2em .8em;
+    transition: top .2s ease-in-out;
 }
 #skip-to-content:focus {
-    left: 0;
+    top: 0;
 }
 
 footer {
