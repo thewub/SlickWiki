@@ -159,10 +159,12 @@ body {
         font-size: small;
     }
 
-    /* Hanging bullets TODO: fix on mobile */
-    > ul,
-    > ol {
-        padding-left: 0;
+    /* Hanging bullets (but not on mobile) */
+    @media (min-width: @screen-sm-min) {
+        > ul,
+        > ol {
+            padding-left: 0;
+        }
     }
 
     /* Dividers */
@@ -185,10 +187,21 @@ body {
         margin-top: 36px;
     }
 
+    @media (min-width: @screen-sm-min) {
+        .headerlink {
+            position: absolute;
+            left: -2.5rem;
+            top: 0.2em;
+        }
+    }
+    @media (max-width: @screen-xs-max) {
+        .headerlink {
+            position: relative;
+            margin-left: .2em;
+        }
+    }
+
     .headerlink {
-        position: absolute;
-        left: -2.5rem;
-        top: 0.2em;
         opacity: 0.2;
         font-size: 0.8em;
     }
