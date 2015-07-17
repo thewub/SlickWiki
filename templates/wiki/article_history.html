@@ -9,13 +9,13 @@
 
 {% block content %}
     {% if revision_list %}
-    <table class="table table-striped">
+    <table class="table table-striped table-article-history">
         <thead>
             <tr>
-                <th scope="col"><i class="fa fa-clock-o"></i> Timestamp</th>
-                <th scope="col"><i class="fa fa-user"></i> User</th>
-                <th scope="col"><i class="fa fa-comment"></i> Comment</th>
-                <th scope="col">Diff</th>
+                <th scope="col" class="table-head-time"><i class="fa fa-clock-o"></i> Timestamp</th>
+                <th scope="col" class="table-head-user"><i class="fa fa-user"></i> User</th>
+                <th scope="col" class="table-head-comment"><i class="fa fa-comment"></i> Comment</th>
+                <th scope="col" class="table-head-diff">Diff</th>
             </tr>
         </thead>
         <tbody>
