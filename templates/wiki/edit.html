@@ -7,9 +7,9 @@
     <h1><i class="fa fa-pencil"></i> {{ article.title }}</h1>
     <p class="subhead">
         {% if new_article %}
-            Creating new article
+            Creating new page
         {% else %}
-            <a href="/{{ article.slug }}/">« back to article</a>
+            <a href="/{{ article.slug }}/">« back to page</a>
         {% endif %}
     </p>
 {% endblock %}
