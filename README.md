@@ -1,4 +1,6 @@
-Requirements:
+A simple Django based wiki.
+
+==Requirements==
 
 * Django >= 1.7 (https://www.djangoproject.com/)
 * Python Markdown >= 2.6 (https://pythonhosted.org//Markdown/index.html)
