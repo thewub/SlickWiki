@@ -49,7 +49,7 @@ $(document).ready(function() {
 function scroll_if_anchor(href) {
 
     // Offset in px
-    var fromTop = 60;
+    var fromTop = 70;
 
     href = typeof(href) == "string" ? href : $(this).attr("href");
 
