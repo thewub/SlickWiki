@@ -9,7 +9,7 @@ import django.contrib.auth.views
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'SlickWiki.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -60,4 +60,5 @@ urlpatterns = patterns('',
 
     # View article
     url(r'^(?P<slug>[-a-zA-Z0-9\- ]+)/?$', wiki.views.view_article),
-)
+
+]
