@@ -46,7 +46,7 @@ urlpatterns = patterns('',
     url(r'special/diff/(?P<rev1id>\d+)/(?P<rev2id>\d+)/?$', 'wiki.views.diff'),
     
     # Article list
-    url(r'^/?$', 
+    url(r'^$', 
         ListView.as_view(
             model=Article,
             template_name='wiki/index.html') ),
