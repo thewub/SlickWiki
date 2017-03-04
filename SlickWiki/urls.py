@@ -46,11 +46,8 @@ urlpatterns = [
     # Diff
     url(r'special/diff/(?P<rev1id>\d+)/(?P<rev2id>\d+)/?$', wiki.views.diff),
     
-    # Article list
-    url(r'^$', 
-        ListView.as_view(
-            model=Article,
-            template_name='wiki/index.html') ),
+    # Index
+    url(r'^$', ListView.as_view( model=Article, template_name='wiki/index.html', ordering='current_revision' ) ),
 
     # Edit article
     url(r'(?P<slug>[-a-zA-Z0-9\- ]+)/edit/?$', wiki.views.edit_article),
