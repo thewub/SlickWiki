@@ -6,6 +6,9 @@
 
 {% block header %}
     <h1>Search results</h1>
+    <p class="subhead">
+        {{ object_list.count }} result{{ object_list.count|pluralize }}
+    </p>
 {% endblock %}
 
 {% block content %}
