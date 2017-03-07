@@ -24,6 +24,6 @@
         {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
         {% if forloop.last %}</div>{% endif %}
     {% empty %}
-    <p>There are no articles</p>
+        <p class="text-center">*tumbleweed*</p>
     {% endfor %}
 {% endblock %}
