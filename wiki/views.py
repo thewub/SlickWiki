@@ -86,15 +86,9 @@ def article_history(request, slug):
 def diff(request, rev1id, rev2id):
     rev1 = Revision.objects.get(id=rev1id)
     rev2 = Revision.objects.get(id=rev2id)
-    diff = difflib.unified_diff(
-                a = rev1.text.split('\n'),
-                b = rev2.text.split('\n'),
-                fromfile = rev1.article.title,
-                tofile = rev2.article.title,
-                fromfiledate = rev1.timestamp,
-                tofiledate = rev2.timestamp
-            )
-    diffText = '\n'.join(diff)
+    
+    diff = difflib.unified_diff(a = rev1.text.split('\n'), b = rev2.text.split('\n'))
+    diffText = ''.join(list(diff)[2:]) # skip first 2 lines (file names and dates)
     diffHtml = highlight( diffText, DiffLexer(), HtmlFormatter(cssclass='codehilite') )
 
     return render_to_response('wiki/diff.html', {
