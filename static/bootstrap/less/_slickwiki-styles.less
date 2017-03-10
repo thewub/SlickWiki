@@ -84,13 +84,19 @@ body {
     margin: 0 auto;
 }
 
+/* Common box style */
+.sw-box {
+    border: none;
+    border-left: 5px solid @gray-light;
+    border-radius: 0;
+    background: @gray-lighter;
+}
+
 /* Snippets e.g. on home page */
 .snippet {
-    padding: 0 20px;
+    .sw-box;
+    padding: 5px 20px;
     margin-bottom: @grid-gutter-width;
-    border-radius: 6px;
-    border: 1px solid @gray-lighter;
-    box-shadow: @gray-lighter 0 4px 4px;
 }
 .snippet-content {
     font-family: @font-family-serif;
@@ -155,11 +161,12 @@ body {
 /* Table of contents */
 .toc {
 
-    font-family: @font-family-sans-serif;
-    border-left: 5px solid @gray-light;
-    background: @gray-lighter;
+    .sw-box;
+
     padding: 1em;
     margin-bottom: 1em;
+    
+    font-family: @font-family-sans-serif;
 
     .toctitle {
         font-weight: bold;
@@ -236,10 +243,8 @@ body {
 
     /* Preformatted and code blocks */
     pre {
+        .sw-box;
         font-size: .8em;
-        border: none;
-        border-left: 5px solid @gray-light;
-        border-radius: 0;
     }
 
     /* Headings and header links */
