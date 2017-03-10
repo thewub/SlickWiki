@@ -28,6 +28,11 @@ $(document).ready(function() {
         $('.search-icon').removeClass('active');
     });
 
+    // TOC collapsing
+    $('.toctitle').click(function() {
+        $(this).parent().toggleClass('collapsed');
+    });
+
     // Hacky autofocus for login/create account forms
     $('#id_username').focus();
 

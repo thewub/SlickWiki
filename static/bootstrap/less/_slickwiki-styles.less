@@ -162,7 +162,13 @@ body {
 
     .toctitle {
         font-weight: bold;
+        cursor: pointer;
     }
+    .toctitle:after {
+        font-family: FontAwesome;
+        content: ' \f106'
+    }
+
     ul {
         list-style-type: decimal;
         padding-left: 2em;
@@ -172,6 +178,18 @@ body {
         padding-top: 0.6em;
     }
 }
+
+.toc.collapsed {
+
+    .toctitle:after {
+        content: ' \f107'
+    }
+
+    ul {
+        display: none;
+    }
+}
+
 
 /* <pre> for diffs */
 .diff-content pre {
