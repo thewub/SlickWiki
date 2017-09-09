@@ -81,24 +81,21 @@
         </div>
         {% endif %}
 
-        <div class="page-header" id="page-header">
-            <div class="container">
+        <div class="container">
+
+            <div class="page-header" id="page-header">
                 {% block header %}{% endblock %}
             </div>
-        </div>
 
-        <div class="content">
-            <div class="container">
+            <div class="content">
                 {% block content %}{% endblock %}
             </div>
+
         </div>
 
         <footer>
-            <div class="container">
-                <div class="small text-center">Powered by SlickWiki</div>
-            </div>
+            <div class="small text-center">Powered by SlickWiki</div>
         </footer>
-            
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="{% static "jquery/jquery-1.11.1.min.js" %}"></script>
