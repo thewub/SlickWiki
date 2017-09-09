@@ -2,7 +2,7 @@
     <nav class="text-center">
         <ul class="pagination">
             {% if page_obj.has_previous %}
-                <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.previous_page_number }}"><</a></li>
+                <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.previous_page_number }}" rel="prev"><</a></li>
             {% endif %}
 
             {% for i in paginator.page_range %}
@@ -10,7 +10,7 @@
             {% endfor %}
 
             {% if page_obj.has_next %}
-                <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.next_page_number }}">></a></li>
+                <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.next_page_number }}" rel="next">></a></li>
             {% endif %}
         </ul>
     </nav>
