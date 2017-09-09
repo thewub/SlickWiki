@@ -1,5 +1,5 @@
 {% if is_paginated %}
-    <div class="text-center">
+    <nav class="text-center">
         <ul class="pagination">
             {% if page_obj.has_previous %}
                 <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.previous_page_number }}"><</a></li>
@@ -13,5 +13,5 @@
                 <li><a href="?{{queries.urlencode}}&amp;page={{ page_obj.next_page_number }}">></a></li>
             {% endif %}
         </ul>
-    </div>
+    </nav>
 {% endif %}
