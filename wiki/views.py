@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render_to_response, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -22,7 +22,11 @@ def view_article(request, slug):
         article = Article.objects.get(slug=slug)
     except Article.DoesNotExist:
         return redirect('/%s/edit' % slug)
-    return render_to_response('wiki/article.html', {'article': article}, context_instance=RequestContext(request))
+    return render(
+        request,
+        'wiki/article.html', 
+        context = {'article': article}
+    )
 
 
 @login_required
@@ -63,24 +67,22 @@ def edit_article(request, slug):
 
         return redirect(article)
 
-    return render_to_response('wiki/edit.html', 
-                                { 
-                                    'form': form, 
-                                    'article': article,
-                                    'new_article': new_article
-                                },
-                                context_instance=RequestContext(request))
+    return render(
+        request, 
+        'wiki/edit.html',
+        context = { 'form': form, 'article': article, 'new_article': new_article }
+    )
 
 
 def article_history(request, slug):
     slug = slug.replace(' ', '-')
     article = get_object_or_404(Article, slug=slug)
     revision_list = Revision.objects.filter(article=article)
-    return render_to_response('wiki/article_history.html', {
-                                    'article': article,
-                                    'revision_list': revision_list
-                                },
-                                context_instance=RequestContext(request))
+    return render(
+        request,
+        'wiki/article_history.html', 
+        context = { 'article': article, 'revision_list': revision_list }
+    )
 
 
 def diff(request, rev1id, rev2id):
@@ -91,22 +93,21 @@ def diff(request, rev1id, rev2id):
     diffText = ''.join(list(diff)[2:]) # skip first 2 lines (file names and dates)
     diffHtml = highlight( diffText, DiffLexer(), HtmlFormatter(cssclass='codehilite') )
 
-    return render_to_response('wiki/diff.html', {
-                                    'rev1': rev1,
-                                    'rev2': rev2,
-                                    'diffHtml': diffHtml
-                                },
-                                context_instance=RequestContext(request))
+    return render(
+        request,
+        'wiki/diff.html', 
+        context = { 'rev1': rev1, 'rev2': rev2, 'diffHtml': diffHtml }
+    )
 
 
 def user_info(request, username):
     user = get_object_or_404(User, username=username)
     revision_list = Revision.objects.filter(user=user)
-    return render_to_response('wiki/user_info.html', {
-                                    'user': user,
-                                    'revision_list': revision_list
-                                },
-                                context_instance=RequestContext(request))
+    return render(
+        request,
+        'wiki/user_info.html', 
+        context = { 'user': user, 'revision_list': revision_list }
+    )
 
 
 def create_account(request):
@@ -125,7 +126,11 @@ def create_account(request):
             return redirect('/')
     else:
         form = UserCreationForm()
-    return render_to_response('registration/createaccount.html', {'form': form}, context_instance=RequestContext(request))
+    return render(
+        request,
+        'registration/createaccount.html',
+        context = {'form': form}
+    )
 
 
 def get_search_results(request):
@@ -144,7 +149,8 @@ def get_search_results(request):
     except EmptyPage:
         returned_page = pages.page(1)
 
-    return render_to_response('wiki/search_results.html',
-                                {'page_obj': returned_page,
-                                 'object_list': returned_page.object_list,
-                                 'search': query})
+    return render(
+        request,
+        'wiki/search_results.html',
+        context = { 'page_obj': returned_page, 'object_list': returned_page.object_list, 'search': query }
+    )
