@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'special/userlist/?', 
         ListView.as_view(
             model=User,
+            ordering=['date_joined'],
             paginate_by=20,
             template_name='wiki/user_list.html') ),
 
