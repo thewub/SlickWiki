@@ -1,4 +1,4 @@
-{% if is_paginated %}
+{% if paginator.num_pages > 1 %}
     <nav class="text-center">
         <ul class="pagination">
             {% if page_obj.has_previous %}

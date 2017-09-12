@@ -141,8 +141,8 @@ def get_search_results(request):
     query = request.GET.get('q', '')
     page = request.GET.get('page', 1)
 
-    results = Article.objects.filter(Q(title__icontains=query))
-    pages = Paginator(results, 5)
+    results = Article.objects.filter(Q(title__icontains=query)).order_by('-current_revision')
+    pages = Paginator(results, 6)
 
     try:
         returned_page = pages.page(page)
@@ -152,5 +152,5 @@ def get_search_results(request):
     return render(
         request,
         'wiki/search_results.html',
-        context = { 'page_obj': returned_page, 'object_list': returned_page.object_list, 'search': query }
+        context = { 'paginator': pages, 'page_obj': returned_page, 'object_list': returned_page.object_list, 'search': query }
     )

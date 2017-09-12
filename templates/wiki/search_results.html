@@ -7,7 +7,7 @@
 {% block header %}
     <h1>Search results</h1>
     <p class="subhead">
-        {{ object_list.count }} result{{ object_list.count|pluralize }}
+        {{ paginator.count }} total result{{ paginator.count|pluralize }}
     </p>
 {% endblock %}
 
@@ -26,4 +26,5 @@
     {% empty %}
         <p class="text-center">*tumbleweed*</p>
     {% endfor %}
+    {% include 'wiki/snippets/pagination.html' %}
 {% endblock %}
