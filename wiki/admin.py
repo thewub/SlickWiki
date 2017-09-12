@@ -1,4 +1,4 @@
-import models
+import wiki.models
 from django.contrib import admin
 
 
@@ -14,5 +14,5 @@ class RevisionAdmin(admin.ModelAdmin):
         obj.save()
 
 
-admin.site.register(models.Article, ArticleAdmin)
-admin.site.register(models.Revision, RevisionAdmin)
+admin.site.register(wiki.models.Article, ArticleAdmin)
+admin.site.register(wiki.models.Revision, RevisionAdmin)

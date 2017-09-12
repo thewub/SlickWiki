@@ -1,6 +1,6 @@
 from django import forms
 
-from models import Revision
+from wiki.models import Revision
 
 class EditForm(forms.ModelForm):
     class Meta:
