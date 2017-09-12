@@ -24,7 +24,7 @@ urlpatterns = [
             template_name='wiki/recent_changes.html') ),
 
     # User stuff
-    url(r'special/login/?', django.contrib.auth.views.login),
+    url(r'special/login/?', django.contrib.auth.views.login, name='login'),
     url(r'special/logout/?', django.contrib.auth.views.logout, {'next_page': '/'}),
     url(r'special/createaccount/?', wiki.views.create_account),
 
