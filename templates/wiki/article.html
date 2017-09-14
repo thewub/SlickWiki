@@ -4,15 +4,14 @@
 
 {% block title %}{{ article.title}} - My Wiki{% endblock %}
 
-{% block navbar_tools %}
-    <li><a href="/{{ article.slug }}/edit/"><i class="fa fa-pencil"></i> Edit page</a></li>
-    <li><a href="/{{ article.slug }}/history/"><i class="fa fa-clock-o"></i> Page history</a></li>
-    <li><a title="Permanent link to this revision" href="{{ article.current_revision.get_absolute_url }}"><i class="fa fa-link"></i> Permalink</a></li>
-{% endblock %}
-
 {% block header %}
     <h1>{{ article.title }}</h1>
     <p class="subhead">edited by <a href="/user/{{ article.current_revision.user.username }}">{{ article.current_revision.user.username }}</a> at {{ article.current_revision.timestamp }}</p>
+    <ul>
+        <li><a href="/{{ article.slug }}/edit/"><i class="fa fa-pencil"></i> Edit page</a></li>
+        <li><a href="/{{ article.slug }}/history/"><i class="fa fa-clock-o"></i> Page history</a></li>
+        <li><a title="Permanent link to this revision" href="{{ article.current_revision.get_absolute_url }}"><i class="fa fa-link"></i> Permalink</a></li>
+    </ul>
 {% endblock %}
 
 {% block content %}

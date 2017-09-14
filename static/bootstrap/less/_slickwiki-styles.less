@@ -143,6 +143,21 @@ body {
     h1 i {
         color: @gray-light;
     }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul li {
+        display: inline;
+        padding: 0 .6em;
+        white-space: nowrap;
+        @media (min-width: @screen-lg-min) {
+            padding: 0 1em;
+        }
+    }
 }
 
 .table thead i {
