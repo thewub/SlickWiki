@@ -135,7 +135,7 @@ body {
     padding: 1em 0;
     border: none;
     border-bottom: 1px solid @gray-light;
-    text-align: center;
+    text-align: left;
 
     h1 {
         font-weight: 700;
@@ -152,11 +152,8 @@ body {
 
     ul li {
         display: inline;
-        padding: 0 .6em;
+        padding: 0 1em 0 0;
         white-space: nowrap;
-        @media (min-width: @screen-lg-min) {
-            padding: 0 1em;
-        }
     }
 }
 
@@ -240,7 +237,7 @@ body {
 /* Article content */
 .article-content {
     max-width: 42em;
-    margin: 0 auto;
+    margin: 0;
     font-family: @font-family-serif;
 
     /* Label external links */
