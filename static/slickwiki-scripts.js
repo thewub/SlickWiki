@@ -28,6 +28,9 @@ $(document).ready(function() {
         $('.search-icon').removeClass('active');
     });
 
+    // Pull TOC out of article content
+    $('.article-content').before( $('.toc') );
+
     // TOC collapsing
     $('.toctitle').click(function() {
         $(this).parent().toggleClass('collapsed');
