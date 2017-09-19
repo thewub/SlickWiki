@@ -179,8 +179,6 @@ body {
     }
 }
 
-
-
 /* Table of contents */
 .toc {
 
@@ -255,7 +253,8 @@ body {
     /* Hanging bullets (but not on mobile) */
     @media (min-width: @screen-sm-min) {
         > ul,
-        > ol {
+        > ol,
+        .footnote > ol {
             padding-left: 0;
         }
     }
