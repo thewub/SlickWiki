@@ -24,6 +24,7 @@ register = template.Library()
 @stringfilter
 def custom_markdown(value):
     extensions = ['wikilinks', 
+                  'markdown.extensions.footnotes',
                   TocExtension(baselevel=2, title='Contents', permalink=u'#'),
                   CodeHiliteExtension(guess_lang=True, use_pygments=True),
                   WikiLinkExtension(build_url=wikilink_url_builder)

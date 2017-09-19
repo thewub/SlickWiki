@@ -64,9 +64,11 @@ function scroll_if_anchor(href) {
     // If href missing, ignore
     if(!href) return;
 
+    var id = href.replace('#','');
+
     // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
     // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
-    var $target = $(href);
+    var $target = $('[id="' + id + '"]');
 
     // Older browsers without pushState might flicker here, as they momentarily
     // jump to the wrong position (IE < 10)
