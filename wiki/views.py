@@ -122,7 +122,7 @@ def create_account(request):
             new_user = authenticate(username=username, password=password)
             login(request, new_user)
 
-            messages.success(request, 'Successfully created account %s' % username)
+            messages.success(request, 'Successfully created account "%s"' % username)
             return redirect('/')
     else:
         form = UserCreationForm()
