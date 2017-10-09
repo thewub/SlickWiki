@@ -74,6 +74,21 @@ body {
     opacity: 1;
 }
 
+.alert:before {
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+.alert-success:before {
+    content: "\f058"; // fa-check-circle
+}
+.alert-info:before {
+    content: "\f05a"; // fa-info-circle
+}
+.alert-warning:before,
+.alert-danger:before {
+    content: "\f06a"; // fa-exclamation-circle
+}
+
 .center-form {
     max-width: 30em;
     margin: 0 auto;
