@@ -334,3 +334,34 @@ body {
     }
 
 }
+
+/* Night mode */
+body.night {
+
+    background: @night-bg;
+    color:      @night-primary;
+
+    .navbar-default {
+        background:     @night-bg;
+        border-color:   @night-secondary;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        color: @night-primary;
+    }
+
+    .h1, .h2, .h3, .h4, .h5, .h6, 
+    h1, h2, h3, h4, h5, h6 {
+        color: @night-emphasis;
+    }
+
+    code {
+        background: @night-bg-hl;
+    }
+
+    .form-control {
+        background: @night-bg-hl;
+        color:      @night-primary;
+    }
+
+}
