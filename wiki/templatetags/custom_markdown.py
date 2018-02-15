@@ -30,6 +30,6 @@ def custom_markdown(value):
                   WikiLinkExtension(build_url=wikilink_url_builder)
                  ]
     return mark_safe(markdown.markdown(force_text(value),
-                                        extensions,
+                                        extensions=extensions,
                                         safe_mode=True,
                                         enable_attributes=False))
