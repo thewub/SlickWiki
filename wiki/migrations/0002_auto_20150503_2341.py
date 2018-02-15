@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='revision',
             name='parent',
-            field=models.ForeignKey(to='wiki.Revision', null=True),
+            field=models.ForeignKey(to='wiki.Revision', null=True, on_delete=models.CASCADE),
             preserve_default=True,
         ),
     ]
