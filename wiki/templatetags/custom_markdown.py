@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import markdown
+import markdown, bleach
+
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
 from markdown.extensions.wikilinks import WikiLinkExtension
@@ -13,9 +14,27 @@ from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 
 
+# Tags suitable for rendering markdown (based on https://github.com/yourcelf/bleach-whitelist)
+markdown_tags = [
+    "h1", "h2", "h3", "h4", "h5", "h6",
+    "b", "i", "strong", "em", "tt",
+    "p", "br",
+    "span", "div", "blockquote", "code", "hr",
+    "ul", "ol", "li", "dd", "dt",
+    "img",
+    "a",
+    "pre",
+    "sup"
+]
+
+markdown_attrs = {
+    "*": ["class", "id"],
+    "img": ["src", "alt", "title"],
+    "a": ["href", "alt", "title", "class", "id"]
+}
+
 def wikilink_url_builder(label, base, end):
     return '/' + slugify(label) + '/'
-
 
 
 register = template.Library()
@@ -29,7 +48,10 @@ def custom_markdown(value):
                   CodeHiliteExtension(guess_lang=True, use_pygments=True),
                   WikiLinkExtension(build_url=wikilink_url_builder)
                  ]
-    return mark_safe(markdown.markdown(force_text(value),
-                                        extensions=extensions,
-                                        safe_mode=True,
-                                        enable_attributes=False))
+    return mark_safe(
+        bleach.clean(
+            markdown.markdown(force_text(value), extensions=extensions),
+            markdown_tags, 
+            markdown_attrs
+            )
+        )
