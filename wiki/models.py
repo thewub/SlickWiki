@@ -5,7 +5,13 @@ from django.contrib.auth.models import User
 class Article(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
-    current_revision = models.ForeignKey('Revision', related_name='current_revision', blank=True, null=True)
+    current_revision = models.ForeignKey(
+        'Revision', 
+        related_name='current_revision', 
+        blank=True, 
+        null=True,
+        on_delete=models.CASCADE
+    )
 
     def get_absolute_url(self):
         return "/" + self.slug + "/"
@@ -18,9 +24,9 @@ class Revision(models.Model):
     text = models.TextField()
     comment = models.CharField(max_length=200, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User)
-    article = models.ForeignKey(Article)
-    parent = models.ForeignKey('self', null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', null=True, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ["-timestamp"]

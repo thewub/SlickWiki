@@ -30,9 +30,9 @@ class Migration(migrations.Migration):
                 ('text', models.TextField()),
                 ('comment', models.CharField(max_length=200, blank=True)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
-                ('article', models.ForeignKey(to='wiki.Article')),
-                ('parent_revision', models.ForeignKey(to='wiki.Revision', null=True)),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('article', models.ForeignKey(to='wiki.Article', on_delete=models.CASCADE)),
+                ('parent_revision', models.ForeignKey(to='wiki.Revision', null=True, on_delete=models.CASCADE)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ['-timestamp'],
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='current_revision',
-            field=models.ForeignKey(related_name='current_revision', blank=True, to='wiki.Revision', null=True),
+            field=models.ForeignKey(related_name='current_revision', blank=True, to='wiki.Revision', null=True, on_delete=models.CASCADE),
             preserve_default=True,
         ),
     ]
