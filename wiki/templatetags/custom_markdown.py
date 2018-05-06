@@ -44,7 +44,7 @@ register = template.Library()
 def custom_markdown(value):
     extensions = ['markdown.extensions.wikilinks', 
                   'markdown.extensions.footnotes',
-                  TocExtension(baselevel=2, title='Contents', permalink=u'#'),
+                  TocExtension(baselevel=2, title='Contents', permalink=u'#', marker='{-TOC-}'),
                   CodeHiliteExtension(guess_lang=True, use_pygments=True),
                   WikiLinkExtension(build_url=wikilink_url_builder)
                  ]
@@ -55,3 +55,9 @@ def custom_markdown(value):
             markdown_attrs
             )
         )
+
+# Hack to always add a TOC
+@register.filter(is_safe=True)
+@stringfilter
+def add_toc(value):
+    return mark_safe( '{-TOC-}\n\n' + value )

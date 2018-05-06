@@ -28,13 +28,22 @@ $(document).ready(function() {
         $('.search-icon').removeClass('active');
     });
 
-    // Pull TOC out of article content
-    $('.article-content').before( $('.toc') );
+    /* Table of contents */
 
-    // TOC collapsing
-    $('.toctitle').click(function() {
-        $(this).parent().toggleClass('collapsed');
-    });
+    if ( $('.toc ul li').length === 0 ) {
+        $('.toc').remove();
+    } else {
+        
+        $('.article-content').before( $('.toc') ); // Pull out of article content
+
+        // TOC collapsing
+        $('.toctitle').click(function() {
+            $(this).parent().toggleClass('collapsed');
+        });
+
+    }
+
+    /* End of table of contents */
 
     // Hacky autofocus for login/create account forms
     $('#id_username').focus();
