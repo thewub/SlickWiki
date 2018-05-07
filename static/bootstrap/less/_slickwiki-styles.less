@@ -217,6 +217,8 @@ body {
     .toctitle {
         font-weight: bold;
         cursor: pointer;
+        display: block;
+        width: 100%;
     }
     .toctitle:after {
         font-family: FontAwesome;
@@ -232,7 +234,7 @@ body {
     }
     li {
         line-height: 1.4;
-        padding-top: 0.6em;
+        padding-top: 0.4em;
     }
 }
 
@@ -240,7 +242,7 @@ body {
     .toc {
         float: right;
         margin-left: 1em;
-        max-width: 26em;
+        width: 30%;
 
         position: -webkit-sticky;
         position: sticky;
@@ -268,7 +270,7 @@ body {
 
 /* Article content */
 .article-content {
-    max-width: 42em;
+    max-width: 65%;
     margin: 0;
     font-family: @font-family-serif;
 
