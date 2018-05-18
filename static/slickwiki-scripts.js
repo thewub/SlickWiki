@@ -54,6 +54,22 @@ $(document).ready(function() {
     // Intercept all anchor clicks
     $("body").on("click", "a[href^='#']", scroll_if_anchor);
 
+    /* Footnote tooltips */
+    $(".footnote-ref").mouseenter(function() {
+        var footnoteID = $(this).attr('href').replace(':', '\\:'); // jQuery struggles with colons in IDs
+        $footnoteTooltip = $('<div class="footnote-tooltip"></div>');
+        $footnoteTooltip.html( $(footnoteID).html() );
+        $(this).after( $footnoteTooltip );
+    }).mouseleave(function() {
+        window.setTimeout(function() {
+            // TODO - improve this
+            // Currently if they move to a different tooltip during timer, it will get removed too
+            // Would need to add some ID on tooltip also
+            $('.footnote-tooltip').remove();
+        }, 1000);
+
+    });
+
 });
 
 
