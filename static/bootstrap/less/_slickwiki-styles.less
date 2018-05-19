@@ -355,16 +355,23 @@ body {
     .footnote-ref::after  { content: ']'; }
 
     .footnote-tooltip {
-        .sw-box;
         position: absolute;
+        z-index: 10;
         top: 0;
         left: 1.5em;
-        line-height: 1.2;
+        line-height: 1.6;
         padding: 1em;
-        min-width: 20em;
+        display: table;
+        max-width: 20em;
+        background: @sol-base3;
+        border: 1px solid @gray-lighter;
 
         p:last-of-type {
             margin: 0;
+        }
+
+        a.footnote-backref {
+            display: none; // TODO: change JS to not add this
         }
     }
 
