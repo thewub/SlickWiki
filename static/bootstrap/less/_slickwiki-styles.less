@@ -347,7 +347,25 @@ body {
         opacity: 1;
     }
 
+    .footnote-ref {
+        cursor: pointer;
+    }
+
     .footnote-ref::before { content: '['; }
     .footnote-ref::after  { content: ']'; }
+
+    .footnote-tooltip {
+        .sw-box;
+        position: absolute;
+        top: 0;
+        left: 1.5em;
+        line-height: 1.2;
+        padding: 1em;
+        min-width: 20em;
+
+        p:last-of-type {
+            margin: 0;
+        }
+    }
 
 }
