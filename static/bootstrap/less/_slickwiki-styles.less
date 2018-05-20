@@ -357,14 +357,14 @@ body {
     .footnote-tooltip {
         position: absolute;
         z-index: 10;
-        top: 0;
-        left: 1.5em;
+        top: -6px;
+        left: 20px;
         line-height: 1.6;
         padding: 1em;
         display: table;
         max-width: 20em;
         background: @sol-base3;
-        border: 1px solid @gray-lighter;
+        border-left: 3px solid @gray-lighter;
 
         p:last-of-type {
             margin: 0;
@@ -373,6 +373,20 @@ body {
         a.footnote-backref {
             display: none; // TODO: change JS to not add this
         }
+
+    }
+
+    .footnote-tooltip:before {
+        position: absolute;
+        top: 14px;
+        right: 100%;
+        border: solid transparent;
+        content: '';
+        width: 0;
+        height: 0;
+        border-right-color: @gray-lighter;
+        border-width: 9px;
+        margin-top: -9px;
     }
 
 }
