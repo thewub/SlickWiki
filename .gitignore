@@ -101,7 +101,7 @@ $RECYCLE.BIN/
 *.msp
 
 
-
 db.sqlite3
-mockups/static/webfonts/
+mockups/
+static/webfonts/
 static/css/fontawesome-all.css
