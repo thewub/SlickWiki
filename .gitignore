@@ -104,3 +104,4 @@ $RECYCLE.BIN/
 
 db.sqlite3
 mockups/static/webfonts/
+static/css/fontawesome-all.css
